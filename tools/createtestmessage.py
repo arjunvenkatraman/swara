@@ -10,4 +10,7 @@ from mutagen.mp3 import MP3
 import time;
 if __name__=="__main__":
 	db=Database()
-	db.addCommentToChannel(sys.argv[1],"12345")
+	auth=db.getAuthDetails(sys.argv[1])
+	if auth==0:
+		auth=db.addAuthor(sys.argv[1])
+	db.addCommentToChannel(sys.argv[1],auth,"12345")

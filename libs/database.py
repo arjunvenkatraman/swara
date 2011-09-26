@@ -117,6 +117,15 @@ class Database:
             "SELECT phone_number FROM users WHERE phone_number = %s;"
                                             ,(str(phoneNumberString),))
         return count>0
+    
+    def getAuthDetails(self, nickname):
+        auth=self.c.execute("SELECT * FROM lb_authors WHERE nickname = %s;" ,(str(nickname),))
+        if auth == 0:
+            return auth
+        else:
+            auth=self.c.fetchall()
+            auth=[i[0] for i in auth]
+            return auth[0]
 
     def getCommentIDs(self):
         self.c.execute("""SELECT id from lb_postings WHERE status = 3 \

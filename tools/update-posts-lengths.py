@@ -19,9 +19,9 @@ if __name__=="__main__":
 		try:
 			audio = MP3(line)
 		except IOError:
-			#print "MP3 file not found for post %s deleting post" %line
-			#db.deletePost(post)
-			pass
+			print "MP3 file not found for post %s deleting post" %line
+			db.deletePost(post)
+			continue
 		#print line,audio.info.length
 		filename=line
 		#post = filename.split("sounds/web/")[0].split('.')[0]

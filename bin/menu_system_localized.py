@@ -186,7 +186,11 @@ def addComment():
         commentTempFileName = recordFileNoPlayback(PROMPTS_DIR+'record-message-beep',300)
         if commentTempFileName:
             break
-		auth=db.addAuthor(user) 
+    os.system("echo %s >> /opt/swara/log.txt" %(user))
+    auth=db.getAuthDetails(user)
+    os.system("echo %s >> /opt/swara/log.txt" %(auth))
+    if auth == 0:
+        auth=db.addAuthor(user)
     newCommentID = db.addCommentToChannel(user, auth,'12345')
     os.rename(AST_SOUND_DIR+commentTempFileName+".wav", SOUND_DIR+str(newCommentID)+".wav")
     #os.system("/usr/local/bin/lame -h --abr 200 "+SOUND_DIR+str(newCommentID)+".wav "+SOUND_DIR+"/web/" \
