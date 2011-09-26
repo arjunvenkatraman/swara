@@ -128,7 +128,7 @@ class Database:
     def addCommentToChannel(self, phoneNum, channel):
 		    #self.c.execute("INSERT INTO lb_postings (user, station) VALUES (%s, %s);",(phoneNum, str(channel),))
 		    #Arjun changed to autopublish
-                    self.c.execute("INSERT INTO lb_postings (user, station, status,sticky) VALUES (%s, %s, 3, 0);",(phoneNum, str(channel),))
+                    self.c.execute("INSERT INTO lb_postings (user, station, status,author_id,message_input,edited,audio_size,message_html) VALUES (%s, %s, 3, 0, Empty, 0, 0,Empty);",(phoneNum, str(channel),))
 		    self.db.commit()
 		    ids = str(self.c.lastrowid)
 		    extension = '.mp3'	
