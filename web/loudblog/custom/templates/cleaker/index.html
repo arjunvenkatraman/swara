@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+    <title><lb:sitename /> - <lb:siteslogan /></title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" media="screen" href="screen.css" type="text/css" />
+    <lb:rssfeedhead />
+    <meta http-equiv="content-language" content="en" />
+    <meta name="generator" content="Loudblog" />
+	<meta name="description" content="<lb:sitedescription />" />
+</head>
+
+
+<body>
+
+<div id="wrapper">
+
+<div id="header">
+    <h1 class="title"><lb:sitename /></h1>
+    <p class="title"><lb:siteslogan /></p>
+</div>
+
+<!--------------------------Navigation Bar-------------->
+<ul id="Nav">
+
+<lb:if_list>
+<li><lb:link_next>&nbsp;Next >>&nbsp;</lb:link_next></li>
+<li><lb:link_prev>&nbsp;<< Previous &nbsp;</lb:link_prev></li>
+</lb:if_list>
+<!----you can change the links below to links of your own choice, and add further links if you wish ----->
+<li><a href="http://news.bbc.co.uk/">BBC News</a></li>
+<li><a href="http://www.loudblog.com/">Loudblog</a></li>
+
+<li><lb:link_website>Home</lb:link_website></li>    
+</ul>   
+
+
+<div id="content">
+
+
+    <lb:loop_postings number="5" order="desc">
+
+    <div class="post">
+        <h1><lb:link_permalink><lb:title /></lb:link_permalink></h1>
+        <h4><img src="images/calendar.png" align="top" alt="Date" /> <lb:posted /></h4>
+
+        <lb:message />
+ 
+        <div class="links">
+        
+        <lb:loop_hyperlinks>
+            <p><lb:link_hyperlink><lb:hyperlinkname /></lb:link_hyperlink> <lb:hyperlinkdescription /></p>
+        </lb:loop_hyperlinks>
+        
+
+	  </div>
+	<div class="postmeta">
+<p><img src="images/tag.png" align="top" alt="Category" /> Categories <lb:loop_postingcats><lb:postingcat link="true" /> | </lb:loop_postingcats></p>
+<p><img src="images/tag.png" align="top" alt="Tag" /> Tags <lb:loop_postingtags><lb:postingtag link="true" /> | </lb:loop_postingtags></p>
+
+<lb:if_comments><p><img src="images/comments.png" align="top" alt="Comments" /><lb:link_comments> Comments</lb:link_comments></p></lb:if_comments>
+<p><img src="images/user.png" align="top" alt="Author" /> Posted by <lb:author /></p><lb:if_audio><p><img src="images/bullet_go.png" align="top" alt="downloads" /><lb:counter /></p></lb:if_audio>
+
+        </div>
+        
+        <lb:if_audio>
+	  <p class="flash"><lb:player /></p>
+	        
+        <h4><lb:link_audio>&nbsp;Get <lb:audiotype /> (<lb:audiosize /> MB | <lb:audiolength /> min)</lb:link_audio></h4>
+        </lb:if_audio>
+        
+
+        
+    <lb:area_comments>
+    
+ <h3 id="comments">Comments</h3>
+        <ol class="commentlist">
+        <lb:loop_comments>
+            <li>
+            <cite><lb:commentname /></cite> says:
+	<p class="postmeta"><lb:commentposted format="M j, Y @ h:i A" /></p>
+            
+            <lb:if_commentaudio>
+            <div>
+            <lb:commentflashplayer height="21" width="150" />
+            <p><lb:link_commentfile>Download comment</lb:link_commentfile><br />(<lb:commentsize /> MB | <lb:commentlength /> min)</p>
+            </div>
+            </lb:if_commentaudio>
+            <lb:commentmessage />
+            </li>
+        </lb:loop_comments>
+        </ol>
+        <div id="commentform">
+        <lb:area_makecomment>
+            <h3 class="respond">Your Comment</h3>
+            <div class="input">
+                
+                <lb:inputname />
+		<label for="commentname">Name</label>
+            </div>
+            <div class="input">
+                
+                <lb:inputmail />
+		<label for="commentmail">eMail</label>
+            </div>
+            <div class="input">
+                
+                <lb:inputweb />
+		<label for="commentweb">URL</label>
+            </div>
+            <lb:if_preventspam>
+			<div class="input">
+				
+				<lb:inputspam />
+		<label for="commentspam"><lb:spamquestion /></label>
+			</div>
+			</lb:if_preventspam>
+
+            <div id="message" class="input">
+                <label for="commentmessage">Message</label>
+                <lb:inputmessage />
+            </div>
+            
+            <div id="file" class="input">
+                <label for="commentfile">Audio Comment (&lt;<lb:commentlimit /> MB)</label>
+                <lb:inputfile />
+            </div>
+
+            <div id="buttons" class="input">
+                <lb:buttonpreview />
+                <lb:buttonsend />
+            </div>
+        </lb:area_makecomment> 
+		</div>   
+    </lb:area_comments>
+
+    </div>
+    
+
+
+    </lb:loop_postings>
+
+
+<div class="navigation">
+<p><lb:link_prev><img src="images/resultset_previous.png" align="top"> Previous Page</lb:link_prev>
+&nbsp;&nbsp;&nbsp; 
+<lb:link_next>Next Page <img src="images/resultset_next.png" align="top"></lb:link_next></p>
+ </div>
+
+ </div> 
+
+
+<div id="sidebarRight" class="sidebar">
+
+
+<h2>Categories</h2>
+
+<ul>
+<lb:loop_categories sortby="name" order="asc">
+<li><lb:link_category><img src="images/tag.png" align="top"><lb:categoryname /></lb:link_category></li>
+</lb:loop_categories>
+</ul>
+
+<h2>Tags</h2>
+<lb:tagcloud />
+
+
+</div>
+
+
+<div id="sidebarLeft" class="sidebar">
+
+<h2>About Me</h2>
+<ul>
+<li><img src="images/user.png" align="top" alt="About"> PUT INFORMATION ABOUT YOURSELF HERE</li>
+<li><img src="images/email.png" align="top" alt="Email"><a href="mailto:YOUR E-MAIL ADDRESS"> Send me an e-mail</a></li>
+</ul>
+
+<h2>About this site</h2>
+<ul><li><lb:sitedescription /></li></ul>
+
+<h2>Subscribe</h2>
+<ul>
+<li><img src="images/feed.png" align="top" alt="Feed"><lb:link_podcast>RSS Feed</lb:link_podcast></li>
+<li><img src="images/feed.png" align="top" alt="Feed"><lb:link_podcast comments="true">RSS Feed with comments</lb:link_podcast></li>
+</ul>
+
+<div class="sidebarIcon">
+<h2>Recent postings</h2>
+<lb:lastpostings />
+</div>
+
+<h2>Recent Comments</h2>
+
+<ul>
+<lb:loop_comments global="true" number="5">
+<li><lb:link_permacomment><img src="images/user_comment.png" align="top"> <lb:commentname /></lb:link_permacomment> (<lb:commentparent />)</li>
+</lb:loop_comments>
+</ul>
+
+
+</div>
+    
+    
+<div id="footer">
+    
+<p>Powered by <a href="http://loudblog.com">Loudblog</a> | Template design by Adam Walker Cleaveland of <a href="http://pomomusings.com/design/">cleave design</a>, adapted for Loudblog by <a href="http://www.listen-to-english.com">Peter Carter</a> | Icons from "Silk" by <a href="http://www.famfamfam.com/">FamFamFam</a> | Audio player by <a href="http://www.1pixelout.net/?page_id=34">Martin Laine/1 Pixel Out</a>, adapted for Loudblog by Peter Carter</p> 
+      
+</div>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,332 @@
+/*
+
+  "Red Train"
+  Loudblog-Template
+  (c) by Vladimir Simovic aka Perun
+  www.vlad-design.de | www.perun.net
+
+*/
+
+body {
+background: #320000 url(images/hintergrund.gif) repeat-x fixed; 
+text-align: center; 
+padding: 1em 0;
+font: 62.5% verdana, sans-serif;
+}
+
+/*Allgemeine Formatierungen*/
+a {
+color: #ffc;
+}
+
+a:hover {
+color: #fff;
+text-decoration: none;
+}
+
+hr {
+display: none;
+}
+
+img {
+border: none;
+}
+
+a img {
+vertical-align: -1px;
+}
+
+ins {
+text-decoration: none;
+border-bottom: 1px dashed #eee;
+}
+
+acronym, abbr, dfn {
+border-bottom: 1px dashed #eee;
+font-style: normal;
+}
+
+blockquote {
+border-left: 5px solid #320000;
+margin: 1em 0;
+padding: 10px;
+background: #600000;
+width: 470px;
+}
+
+code, pre {
+color: #f93;
+font-family: verdana, sans-serif;
+}
+
+dt {
+font-weight: bold;
+}
+dd {
+margin: 2px 0 7px 0;
+}
+
+/* Allgemeing&uuml;ltige Klassen */
+.bild-links {
+float: left;
+margin: 0 15px 3px 0;
+}
+
+.bild-rechts {
+float: right;
+margin: 0 0 3px 15px;
+}
+
+.center {
+text-align: center;
+}
+
+/* IDs */
+#container {
+margin: 0 auto;
+text-align: left;
+width: 730px;
+border-bottom: 5px solid #eee;
+background: url(images/container.gif);
+color: #eee;
+}
+
+h1#header {
+height: 205px;
+background: url(images/bahn.jpg) no-repeat;
+margin: 0;
+padding: 0;
+}
+h1#header a, h1#header a:hover {
+color: #fff;
+text-decoration: none;
+font: italic 23px georgia, serif;
+color: #fff;
+line-height: 200px;
+padding: 0 15px;
+}
+
+#content {
+margin: 1em 215px 1.5em 15px;
+font-size: 1.1em;
+line-height: 155%;
+}
+
+#content h2 {
+font: italic 2.1em georgia, serif;
+margin: 5px 0;
+letter-spacing: 1px;
+}
+
+#content h2 a {
+text-decoration: none;
+}
+
+#content h3 {
+padding: 0 0 0 17px;
+margin: .5em 0;
+font-size: 1.4em;
+}
+
+#content h4 {
+font-size: 1.3em;
+padding: 0;
+margin: 1em 0;
+}
+
+#content h5 {
+font-size: 1.1em;
+padding: 0;
+margin: 1em 0;
+}
+
+#content .flash {
+float: left;
+margin: 3px 10px 13px 0;
+}
+
+#content .posting-links {
+margin-left: 140px;
+}
+
+#content .posting-footer {
+margin: 15px 0 20px 0;
+padding-bottom: 10px;
+border-bottom: 1px solid #700000;
+clear: left;
+}
+
+#content a {
+color: #ffc;
+}
+
+/* Navigation */
+#navi {
+float: right;
+width: 200px;
+line-height: 140%;
+}
+
+#navi-innen {
+padding: 5px 15px 10px 15px;
+}
+
+#navi p {
+margin: 1em 0;
+}
+
+#navi h2 {
+font: bold 1.4em veradana, sans-serif;
+margin: .8em 0 .2em 0;
+}
+
+#navi ul {
+list-style: none;
+margin: .4em 0 1em 0;
+padding: 0;
+}
+
+#navi ul li ul {
+margin: .2em 0 .4em .5em;
+}
+
+#navi a {
+text-decoration: none;
+font-weight: bold;
+}
+
+/* Footer */
+#footer {
+clear: both;
+margin: 3em 15px 0 15px;
+padding: 5px;
+padding-bottom: 0;
+text-align: center;
+font-size: .8em;
+}
+
+
+
+
+/* Kommentare */
+
+
+
+ol#commentlist div {
+
+margin: 6px 0 0 0;
+
+}
+
+
+
+ol#commentlist li {
+
+margin: 0 0 28px 0;
+
+}
+
+
+
+#felder {
+
+margin: 20px 0 0 40px;
+
+}
+
+
+
+#content label {
+
+display: block;
+
+float: left;
+
+width: 9em;
+
+margin-bottom: 7px;
+
+}
+
+
+
+#content input, 
+#content textarea {
+
+width: 320px;
+
+margin-bottom: 7px;
+
+}
+
+
+
+input.commentfile {
+
+width: auto;
+
+}
+
+
+
+#content textarea {
+
+height: 130px;
+
+}
+
+
+
+#buttons {
+
+margin-top: 20px;
+
+}
+
+
+
+#prevnext {
+
+text-align: center;
+
+}
+
+
+
+img.rss {
+
+vertical-align: middle;
+
+margin-bottom: 0.2em;
+
+}
+
+
+
+.hidethis {
+
+text-indent: -999em;
+
+}
+/*--------tag weights------------*/
+
+.tagweight1 a {
+   font-size : 100%;
+ }
+.tagweight2 a {
+   font-size : 100%;
+   font-weight : bold;
+ }
+ .tagweight3 a {
+   font-size : 150%;
+ }
+ .tagweight4 a{
+   font-size : 150%;
+   font-weight : bold;
+   
+ }
+.tagweight5 a{
+    font-size : 180%;
+    font-weight : bold;
+  }
+

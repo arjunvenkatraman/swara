@@ -1,0 +1,101 @@
+#################################################
+################INSTALLATION#####################
+#################################################
+
+#1. Install pre-requisites
+##################################################
+# yum install lame asterisk yum install -y mysql mysql-server wget gcc gcc-c++ bison libtermcap-devel newt newt-devel ncurses ncurses-devel svn zlib zlib-devel openssl openssl-devel kernel-devel httpd php-mysql php MySQL-python
+# yum install python-setuptools
+# [ADDITIONAL DEPENDENCIES]
+# Python Setuptools
+# yum install setuptools
+# Python Stopwatch module
+# easy_install stopwatch
+# Python MySQL DB connectors
+# easy_install MySQL-python
+# easy_install MySQL-Python
+# easy_install oauth2
+# easy_install tweepy
+# easy_install simplejson
+
+#2. Disable firewall
+##################################################
+# /etc/init.d/iptables stop
+# chkconfig iptables off
+# perl -p -i -e "s/enforcing/permissive/g" /etc/selinux/config
+
+#3. Start services on boot
+##################################################
+# service sshd start
+# service httpd start
+# service mysqld start
+# chkconfig sshd on
+# chkconfig httpd on
+# chkconfig mysqld on
+
+#4. Checkout Swara code
+##################################################
+# cd /opt
+# svn co https://audiowiki.googlecode.com/svn/branches/swara
+
+#5.Setup mysqld
+##################################################
+# /usr/bin/mysql_secure_installation
+# Answer yes to every question
+# mysql -u root -p <Enter the password>
+# create database swara;
+# exit
+# mysql -u root -p swara < /opt/swara/conf/swaradb.sql
+
+#7. Set up simlinks and Asterisk configs
+##################################################
+# ln -s /opt/swara/web /var/www/html
+# ln -s /opt/swara/bin /usr/share/asterisk/agi-bin
+# ln -s /opt/swara/bin /usr/share/asterisk/sounds
+# cp /opt/swara/conf/extensions.conf /opt/swara/conf/sip.conf /etc/asterisk
+
+#7. Set up Admin Interface
+##################################################
+# Go to http://<yoursite>/install.php and follow instructions
+
+#8. Set up a softphone to test
+##################################################
+# Download and extract SJPhone:
+#  wget -c http://www.sjphone.org/softphone/SJphoneLnx-299a.tar.gz
+#  tar xvf SJphoneLnx-299a.tar.gz
+#  mv SJphoneLnx-299a /home/<your-user-name>/SJPhone
+#
+# Create a SJPhone launcher (Run as root)
+#  touch /usr/bin/run-sjphone
+#  echo -e '#!/bin/bash\ncd /home/<your-user-name>/SJPhone\n./sjphone' > /usr/bin/run-sjphone
+#
+# Load OSS ALSA Emulation Modules:
+#  modprobe snd-pcm-oss
+#
+# SJPhone configuration:
+#    1) click on the Options button
+#    2) go to the Profiles tab.
+#    3) click on 'New'
+#    4) create a new profile called 'asterisk' with profile type 'Calls through SIP proxy'
+#    5) use this profile for your asterisk connection with the following settings:
+#
+#    Register with proxy - checked.
+#    Proxy domain: 192.168.0.1 (IP on which asterisk is listening)
+#
+#    Leave the rest of the settings at default. When you hit the OK button, it will ask for
+#
+#      Account: mysjphone
+#      Password: <as above>
+#
+#    You can change the account and password by reinitializing the profile.
+#
+#    When it's working, SJPhone's main display shows:
+#
+#     Status: no active calls
+#     Default protocol: SIP
+#     SIP Proxy: registered with 192.168.0.1
+#     Host address: 192.168.0.2
+#
+#    and Asterisk's console displays:
+#     Registered SIP 'mysjphone' at 192.168.0.2 
+#
