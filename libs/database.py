@@ -103,6 +103,15 @@ class Database:
                        "VALUES (%s);",(str(phoneNumberString),))
         self.db.commit()
 
+    def addAuthor(self, phoneNumberString):
+        self.c.execute("INSERT INTO lb_authors(nickname) " + \
+                       "VALUES (%s);",(str(phoneNumberString),))
+        self.db.commit()
+        self.c.execute("SELECT LAST_INSERT_ID() FROM lb_authors;")
+        authID=self.c.fetchall()
+        authID=[i[0] for i in authID]
+        return authID[0]
+    
     def isUser(self, phoneNumberString):
         count = self.c.execute(
             "SELECT phone_number FROM users WHERE phone_number = %s;"
@@ -125,10 +134,10 @@ class Database:
         return comments
 
    
-    def addCommentToChannel(self, phoneNum, channel):
+    def addCommentToChannel(self, phoneNum,auth, channel):
 		    #self.c.execute("INSERT INTO lb_postings (user, station) VALUES (%s, %s);",(phoneNum, str(channel),))
 		    #Arjun changed to autopublish
-                    self.c.execute("INSERT INTO lb_postings (user, station, status,sticky) VALUES (%s, %s, 3, 0);",(phoneNum, str(channel),))
+                    self.c.execute("INSERT INTO lb_postings (user, station, status,author_id,sticky) VALUES (%s, %s, 3, %s, 0);",(phoneNum, str(channel), str(auth),))
 		    self.db.commit()
 		    ids = str(self.c.lastrowid)
 		    extension = '.mp3'	

@@ -10,4 +10,4 @@ from mutagen.mp3 import MP3
 import time;
 if __name__=="__main__":
 	db=Database()
-	db.addCommentToChannel("9811142821","12345")
+	db.addCommentToChannel(sys.argv[1],"12345")

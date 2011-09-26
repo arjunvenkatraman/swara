@@ -1,0 +1,11 @@
+
+--This line, and those below, will be ignored--
+
+AM   tools/createtestmessage.py
+M    tools/getpostdetails.py
+AM   libs/database.backup.py
+AM   libs/asteriskinterface.pyc
+AM   libs/utilities.pyc
+AM   libs/database.backup
+M    libs/database.py
+AM   libs/database.pyc

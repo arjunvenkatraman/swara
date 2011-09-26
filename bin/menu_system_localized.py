@@ -186,13 +186,14 @@ def addComment():
         commentTempFileName = recordFileNoPlayback(PROMPTS_DIR+'record-message-beep',300)
         if commentTempFileName:
             break
-    newCommentID = db.addCommentToChannel(user, '12345')
+		auth=db.addAuthor(user) 
+    newCommentID = db.addCommentToChannel(user, auth,'12345')
     os.rename(AST_SOUND_DIR+commentTempFileName+".wav", SOUND_DIR+str(newCommentID)+".wav")
     #os.system("/usr/local/bin/lame -h --abr 200 "+SOUND_DIR+str(newCommentID)+".wav "+SOUND_DIR+"/web/" \
     output=os.popen("/usr/local/bin/lame -h --abr 200 "+SOUND_DIR+str(newCommentID)+".wav "+SOUND_DIR+"/web/" \
                                                              + str(newCommentID)+".mp3").read().strip()
     os.system("echo '%s' >> /var/log/swara.log" %(output))
-    db.addMessageRecordEvent(newCommentID, callID) 
+    db.addMessageRecordEvent(newCommentID, callID)
     # server = smtplib.SMTP('smtp.gmail.com:587')
     # server.ehlo()
     # server.starttls()
