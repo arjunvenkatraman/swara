@@ -33,6 +33,11 @@ class Database:
         posts = self.c.fetchall()
         posts = [i[0] for i in posts]
         return posts
+    def getPostUser(self, channelNum,post):
+        self.c.execute("SELECT user FROM lb_postings WHERE station = %s and id=%s;",(str(channelNum),str(post),))
+        posts = self.c.fetchall()
+        posts = [i[0] for i in posts]
+        return posts[0]
     def getPostDetails(self, channelNum,post):
         self.c.execute("SELECT * FROM lb_postings WHERE station = %s and id=%s;",(str(channelNum),str(post),))
         posts = self.c.fetchall()
@@ -79,6 +84,9 @@ class Database:
 						(str(postID),))
         self.db.commit()
 
+    def updateAuthor(self, auth,postID):
+        self.c.execute("UPDATE lb_postings SET author_id = %s WHERE id = %s;",(str(auth),str(postID),))
+        self.db.commit()
     def updatePostLength(self, length,postID):
         self.c.execute("UPDATE lb_postings SET audio_length = %s WHERE id = %s;",(str(length),str(postID),))
         self.db.commit()
@@ -145,8 +153,9 @@ class Database:
    
     def addCommentToChannel(self, phoneNum,auth, channel):
 		    #self.c.execute("INSERT INTO lb_postings (user, station) VALUES (%s, %s);",(phoneNum, str(channel),))
-		    #Arjun changed to autopublish
-                    self.c.execute("INSERT INTO lb_postings (user, station, status,author_id,sticky) VALUES (%s, %s, 3, %s, 0);",(phoneNum, str(channel), str(auth),))
+		    #Arjun changed to turn off autopublish
+                    #self.c.execute("INSERT INTO lb_postings (user, station, status,author_id,sticky) VALUES (%s, %s, 3, %s, 0);",(phoneNum, str(channel), str(auth),))
+                    self.c.execute("INSERT INTO lb_postings (user, station, status,author_id,sticky) VALUES (%s, %s, 1, %s, 0);",(phoneNum, str(channel), str(auth),))
 		    self.db.commit()
 		    ids = str(self.c.lastrowid)
 		    extension = '.mp3'	
