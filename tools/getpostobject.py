@@ -15,7 +15,3 @@ if __name__=="__main__":
 	#print "Cleaning empty files at %s \n" %timestamp
 	posttest=Post()
 	print posttest.test
-	postid=sys.argv[1]
-	post = db.getPostDetails('12345',postid)
-	for data in post:
-		print data
