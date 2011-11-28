@@ -154,8 +154,8 @@ class Database:
     def addCommentToChannel(self, phoneNum,auth, channel):
 		    #self.c.execute("INSERT INTO lb_postings (user, station) VALUES (%s, %s);",(phoneNum, str(channel),))
 		    #Arjun changed to turn off autopublish
-                    #self.c.execute("INSERT INTO lb_postings (user, station, status,author_id,sticky) VALUES (%s, %s, 3, %s, 0);",(phoneNum, str(channel), str(auth),))
-                    self.c.execute("INSERT INTO lb_postings (user, station, status,author_id,sticky) VALUES (%s, %s, 1, %s, 0);",(phoneNum, str(channel), str(auth),))
+                    self.c.execute("INSERT INTO lb_postings (user, station, status,author_id,sticky) VALUES (%s, %s, 3, %s, 0);",(phoneNum, str(channel), str(auth),))
+                    #self.c.execute("INSERT INTO lb_postings (user, station, status,author_id,sticky) VALUES (%s, %s, 1, %s, 0);",(phoneNum, str(channel), str(auth),))
 		    self.db.commit()
 		    ids = str(self.c.lastrowid)
 		    extension = '.mp3'	
