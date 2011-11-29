@@ -28,6 +28,7 @@ import time
 import random
 import copy
 from utilities import *
+#DEBUG=True
 if DEBUG:
     if DEBUG_AUTO:
         from auto_mockasteriskinterface import *
@@ -38,18 +39,19 @@ else:
     from database import *
 
 #language = 'kannada' # Default language is kannada
-language="hindi"
+#language="hindi"
 #SOUND_DIR = '/var/lib/asterisk/sounds/audiowikiIndia/'
 #PROMPTS_DIR = SOUND_DIR + 'prompts/hindi/'
 #AST_SOUND_DIR = '/var/lib/asterisk/sounds/'
 config=ConfigParser.ConfigParser()
 config.read("/etc/swara.conf")
 LOGFILE = config.get("System","logfile")
+language=config.get("System","language")
 SOUND_DIR = config.get("System","sounddir")
 SOUND_DIR = SOUND_DIR + "/"
 #PROMPTS_DIR = SOUND_DIR + 'prompts/hindi/'
 AST_SOUND_DIR = '/var/lib/asterisk/sounds/'
-PROMPTS_DIR = SOUND_DIR + '/prompts/' + (language, 'hindi')[language == None] + '/' 
+PROMPTS_DIR = SOUND_DIR + '/prompts/' + (language, 'english')[language == None] + '/' 
 
 sys.setrecursionlimit(15000)
 

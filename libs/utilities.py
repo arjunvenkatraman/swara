@@ -4,9 +4,12 @@
 import os
 import sys
 
-def debugPrint(str):
-    sys.stderr.write(str+'\n')
+def debugPrint(msg):
+    sys.stderr.write(msg+'\n')
     sys.stderr.flush()
+    with open("/var/log/swara.log","a") as f:
+	f.write(msg+"\n")
+    f.close()
 
 class KeyPressException(Exception):
     def __init__(self, key):

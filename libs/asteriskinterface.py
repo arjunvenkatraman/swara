@@ -46,7 +46,8 @@ def playFile (fname, keyDict = newKeyDict()):
         debugPrint("STREAM FILE %s \"%s\"\n" % (str(fname),escapeDigits))
         sys.stdout.write("STREAM FILE %s \"%s\"\n" % (str(fname),escapeDigits))
         sys.stdout.flush()
-        result = readline()      
+        result = readline()
+        debugPrint(result)
         result = checkresult(result)
         if time.time() - mytime > 0.1:
             done = 1
