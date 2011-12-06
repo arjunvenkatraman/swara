@@ -1,0 +1,311 @@
+/*
+Theme Name: CGNet Swara
+Theme URI: http://cgnetswara.org/
+Description: CGNet Swara Base Stylesheet
+Version: 1.0
+Author: Rahul Gonsalves
+
+*/
+
+/* reset.css */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { margin:0; padding:0;}
+table {	border-collapse:collapse; border-spacing:0;}
+fieldset,img { border:0;}
+address,caption,cite,code,dfn,em,strong,th,var { font-style:normal; font-weight:normal;}
+ol,ul { list-style:none;}
+caption,th { text-align:left;}
+h1,h2,h3,h4,h5,h6 { font-size:100%; font-weight:normal;}
+q:before,q:after {content:'';}
+abbr,acronym { border:0;}
+
+/* Float Clearing */
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+.clearfix {display: inline-block;}
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
+
+/* Scrollbar Fix */
+html { min-height: 100%; margin-bottom: 1px; font-size: 100%;}
+
+/* Colours 
+
+Dark Brown - #29120C
+Light Brown - #79431F
+Tan - #F9EEEC
+Green - #92A235
+
+*/
+
+/* Layout */
+html {background: #29120C;}
+body {width: 940px; text-align: center; margin: 0 auto; font: 100% 'Helvetica Neue', Calibri, Arial, Helvetica, sans-serif;}
+
+#meta {background: #29120C; color: #F9EEEC; font-size: 13px; text-align: center; padding: 6px 0 7px; font-weight: 900;}
+
+#wrapper {text-align: left;}
+
+	#content {background: #F9EEEC; padding: 30px 50px; border: 5px solid #79431F;}
+	
+		#nav { background: url('../i/BG-Dotted-Double-Brown.png') repeat-x 0 bottom; padding-bottom: 10px; margin-bottom: 10px;}
+		#nav img#logo {float: left;}
+		#nav h2.slogan {float: left; margin-left: 20px; font: italic 100 16px/1.6 "Palatino Linotype", Palatino, serif; width: 520px;}
+		#nav h2.header {float: left; margin-left: 20px; margin-bottom:5px;}
+		#nav h2.header, h2.header a {font: 900 20px/1.25 "Helvetica Neue", Helvetica, sans-serif; color: #79431F; text-decoration: none;}
+		#nav h2.header a:hover {color:#79431F; border-bottom: 2px solid #79431F;}
+
+		#nav h3.slogan {float: left; margin: 10px 0 0 80px; font: 100 21px/1.6 "Palatino Linotype", Palatino, serif; width: 520px;}
+		#nav h3.slogan strong {font-weight: 900; color: #92A235;}
+
+		#primary {width: 580px; float: left;}
+		#primary .report {margin: 20px 0; border-bottom: 1px dotted #79431F; padding-bottom: 10px;}
+			#primary .pagination {text-align: right;}
+
+		#secondary {width: 220px; float: right; margin: 18px 0 0 20px;}
+	
+#footer {padding: 30px;}
+	
+/* Typography */
+
+	#primary h2, #secondary h2 {font: 900 13px/1.2 "Helvetica Neue", Helvetica, sans-serif; text-transform: uppercase; color: #29120C; border-bottom: 1px dotted #79431F; padding-bottom: 3px; margin-bottom: 7px;}
+
+	#secondary h3 {font: 900 13px/1.2 "Helvetica Neue", Helvetica, sans-serif; text-transform: uppercase; color: #29120C; padding-bottom: 3px; margin-top: 30px;}
+	
+	#secondary h2 {margin: 30px 0 10px 0;}
+
+	.report h4 {font: 400 12px/1.2 "Helvetica Neue", Helvetica, sans-serif; color: #29120C; text-transform: uppercase; margin-top: 10px;}
+	.report h4 strong {font-weight: 900;}
+	.report p { font: 400 14px/1.6 "Helvetica Neue", Helvetica, sans-serif; color: #29120C; margin: 5px 0;}
+	.report .audiobox {margin: 5px 15px; float:right;}
+	.report .audiobox a img {margin: 0 5px 0 0; vertical-align: text-bottom;}
+	
+	.about p { font: 400 14px/1.6 "Helvetica Neue", Helvetica, sans-serif; color: #29120C; margin: 5px 0;}
+	.about h1 { font: 400 14px/1.6 "Helvetica Neue", Helvetica, sans-serif; color: #29120C; margin: 5px 0;}
+
+	.aboutnews table {margin: 0px 20px;}
+	.aboutnews tr td {padding: 10px; vertical-align: top;}
+	.aboutnews ul li {background: url('../i/Icon-Bullet-Brown.png') no-repeat 0 6px;}
+
+	.about table {border: 1px solid gray;}
+	.about tr td {padding: 7px;}
+	.about h2 ul li {background: url('../i/Icon-Bullet-Brown.png') no-repeat 0 6px; margin: 0px 5px; padding-left: 16px;}
+	.about h1 ul li { list-style-type: circle; font: 400 14px/1.3 "Helvetica Neue", Helvetica, sans-serif; color: #29120C; margin: 5px 25px; padding-left: 5px;}
+
+	#secondary ul li {background: url('../i/Icon-Bullet-Brown.png') no-repeat 0 10px; padding-left: 16px;}
+
+	#footer ul, #footer img { float: left;}
+	#footer ul {margin: 15px 0 0 30px; }
+	#footer ul li {display: inline; margin-right: 10px;}
+	
+/* Linkery */
+
+	.comments h2 {font: 900 16px/1.25 "Helvetica Neue", Helvetica, sans-serif; color: #79431F; text-decoration: none;}
+	.comments {font: 900 14px/1 "Helvetica Neue", Helvetica, sans-serif; text-decoration: none; line-height: 1.4;}
+
+	.about h2, .about h2 a {font: 900 16px/1.25 "Helvetica Neue", Helvetica, sans-serif; color: #92A235; text-decoration: none;}
+	.about h2 a:hover {color: #069; border-bottom: 1px solid #069;}
+
+	.aboutnews h3, .about h3 a {font: 900 20px/1.25 "Helvetica Neue", Helvetica, sans-serif; color: #92A235; text-decoration: none; margin-bottom:5px;}
+
+	.about h3, .about h3 a {font: 900 20px/1.25 "Helvetica Neue", Helvetica, sans-serif; color: #92A235; text-decoration: none; margin-bottom:5px;}
+	.about h3 a:hover {color: #069; border-bottom: 1px solid #069;}
+	.about h4, .about h4 a {font: 900 16px/1.25 "Helvetica Neue", Helvetica, sans-serif; color: #92A235; text-decoration: none; margin-top:15px;}
+	.about h4 a:hover {color: #069; border-bottom: 1px solid #069;}
+
+	.report h3, .report h3 a {font: 900 20px/1.25 "Helvetica Neue", Helvetica, sans-serif; color: #92A235; text-decoration: none;}
+	.report h3 a:hover {color: #069; border-bottom: 1px solid #069;}
+	.report .audiobox a { padding: 7px 14px; background: url('../i/Button-BG-Green.png') repeat-x; font: 900 11px/1 "Helvetica Neue", Helvetica, sans-serif; text-transform: uppercase; text-decoration: none; -moz-border-radius: 13px; -webkit-border-radius: 13px; border-radius: 13px; color: #29120C;}
+	.report .audiobox a:hover { color: #FFF; background: url('../i/Button-BG-Blue.png') repeat-x}
+
+	#primary .pagination a, #secondary a {border-bottom: 1px dotted #92A235; text-decoration: none; color: #92A235; font-size: 14px; padding-bottom: 2px; line-height: 1.8; font-weight: 900;}
+	#primary .pagination a:hover, #secondary a:hover {border-bottom: 1px solid #069; color: #069; }
+	
+	#footer ul li a { color: #83716D; text-decoration: none; font-weight: 900; font-size: 14px;}
+	#footer ul li a:hover {color: #FFF; border-bottom: 1px solid #FFF;}
+	
+/* Author Tag Cloud */
+
+	#secondary .tagCloud .tagweight1 a { font-size: 75%;}
+	#secondary .tagCloud .tagweight2 a { font-size: 100%;}
+	#secondary .tagCloud .tagweight3 a { font-size: 125%;}
+	#secondary .tagCloud .tagweight4 a { font-size: 150%;}
+	#secondary .tagCloud .tagweight5 a { font-size: 175%;}
+	#secondary .tagCloud .tagweight6 a { font-size: 200%;}
+	#secondary .tagCloud .tagweight7 a { font-size: 225%;}
+	#secondary .tagCloud .tagweight8 a { font-size: 250%;}
+
+/* --------------------------- COMMENTING STUFF */
+
+
+
+h2#commentheadline {
+
+margin-top: 30px;
+
+}
+
+
+
+#commentlist h4 {
+
+margin: 5px 0 7px 0;
+
+}
+
+
+
+ol#commentlist {
+
+list-style: none;
+
+}
+
+
+
+ol#commentlist li {
+
+width: 580;
+
+overflow: hidden;
+
+margin: 0 0 1.5em 0;
+
+list-style: none;
+
+}
+
+
+
+#commentlist li div {
+
+float: left;
+
+width: 150px;
+
+padding: 6px;
+
+margin-right: 10px;
+
+}
+
+
+
+form {
+
+border-top: 1px dotted black;
+
+padding-top: 1.2em;
+
+margin-top: 1.2em;
+
+width: 580px;
+
+}
+
+
+
+div.input {
+
+width: 222px;
+
+float: left;
+
+}
+
+
+
+label {
+
+display: block;
+
+font-weight: bold;
+
+margin-bottom: 0.5em;
+
+}
+
+
+
+div.input input {
+
+width: 212px;
+
+}
+
+div#spamquestion {
+padding: 8px 0 0 17px;
+margin: 0 0 -14px 0;
+}
+
+div#spamquestion input {
+width: 318px;
+}
+
+
+
+div#message {
+
+width: 445px; 
+
+float: left;
+
+margin-top: 1.2em;
+
+}
+
+
+
+div#message textarea {
+
+width: 435px;
+
+height: 120px;
+
+}
+
+
+
+div#file {
+
+width: 330px;
+
+float: right;
+
+margin-top: 1.2em;
+
+}
+
+
+
+div#file input {
+
+width: 320px;
+
+}
+
+
+
+div#buttons {
+
+width: 330px;
+
+float: left;
+
+margin-left: 130px;
+
+margin-top: 10px;
+
+overflow: hidden;
+
+}
+
+
+
+div#buttons input {
+
+width: 160px;
+
+float: left;
+
+}

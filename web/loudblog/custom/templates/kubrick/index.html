@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title><lb:sitename /></title>
+	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+	<meta name="generator" content="Loudblog" />
+	<link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+	<lb:rssfeedhead />
+</head>
+
+<body>
+
+<div id="page">
+	
+	<div id="header">
+		<div id="headerimg">
+			<h1><lb:link_website><lb:sitename /></lb:link_website></h1>
+			<div class="description">
+				<lb:siteslogan />
+			</div>
+		</div>
+	</div>
+	
+	<hr />
+
+
+
+	<div id="content" class="narrowcolumn">
+
+		<lb:loop_postings number="5">
+		<div class="post">
+
+			<h2 id="post-1"><lb:link_permalink><lb:title /></lb:link_permalink></h2>
+			<small><lb:posted /> by <lb:authorfullname /></small>
+			
+			<div class="entry">
+				<lb:message />
+				<lb:if_audio>
+				<p><lb:link_audio>Download <lb:audiotype /></lb:link_audio> (<lb:audiolength />min, <lb:audiosize />MB)</p>
+				<p class="flash"><lb:flashplayer width="355" height="28" /></p>
+				</lb:if_audio>
+				
+				<dl>
+					<lb:loop_hyperlinks>
+					<dt><lb:link_hyperlink><lb:hyperlinkname /></lb:link_hyperlink></dt>
+					<dd><lb:hyperlinkdescription /></dd>
+					</lb:loop_hyperlinks>
+				</dl>
+			</div>
+			
+			<p class="postmetadata">
+				<lb:link_permalink>#</lb:link_permalink> | Posted in 
+				<lb:loop_postingcats><lb:postingcat link="true" /> | </lb:loop_postingcats><lb:if_comments> | <lb:link_comments>Comments &raquo;</lb:link_comments></lb:if_comments></p>
+				<p class="postmetadata">Tags : <lb:loop_postingtags><lb:postingtag link="true" /> | </lb:loop_postingtags></p>
+				
+			</div>
+		
+		<lb:area_comments>
+		<h2 id="commentheadline">
+			All Comments <lb:link_podcast postings="false" comments="true" single="true">
+			<img class="rss" src="images/rss.png" alt="RSS" />
+			</lb:link_podcast> 
+		</h2>
+		
+		<ol class="commentlist">
+			<lb:loop_comments>
+			<li class="graybox">
+				<cite><lb:commentname /></cite> Says:<br />
+				<lb:link_permacomment>
+				<small class="commentmetadata">
+					<lb:commentposted format="F dS, Y" /> at 
+					<lb:commentposted format="h:i a" />
+				</small></lb:link_permacomment>
+				
+				<lb:if_commentaudio>
+				<div class="commentflash">
+					<lb:commentflashplayer height="21" width="150" />
+				</div>
+				<p>
+					<lb:commentlength />min | 
+					<lb:commentsize />MB&nbsp;&nbsp;&nbsp;<lb:link_commentfile>&raquo; 
+					Download now</lb:link_commentfile>
+				</p>
+				</lb:if_commentaudio>
+				
+				<div class="commentshowmessage">
+					<lb:commentmessage />
+				</div>
+			</li>
+			</lb:loop_comments>
+		</ol>
+		
+		<lb:area_makecomment>
+		<h2>Your Comment</h2>
+		<div id="felder">
+			<div class="input">
+				<label for="commentname">Name</label>
+				<lb:inputname />
+			</div>
+			<div class="input">
+				<label for="commentmail">eMail</label>
+				<lb:inputmail />
+			</div>
+			<div class="input">
+				<label for="commentweb">Website</label>
+				<lb:inputweb />
+			</div>
+			
+			<div id="message" class="input">
+				<label for="commentmessage">Message</label>
+				<lb:inputmessage />
+			</div>
+			<lb:if_preventspam>
+			<div class="input">
+				<label for="commentspam"><lb:spamquestion /></label>
+				<lb:inputspam />
+			</div>
+			</lb:if_preventspam>
+			<div id="file" class="input">
+				<label for="commentfile">Audio (<lb:commentlimit />MB)</label>
+				<lb:inputfile />
+			</div>
+			<div id="buttons" class="input">
+				<label for="commentpreview" class="hidethis">Preview</label>
+				<lb:buttonpreview />
+				<label for="commentsubmit" class="hidethis">Submit</label>
+				<lb:buttonsend />
+			</div>
+		</div>
+		</lb:area_makecomment>
+		</lb:area_comments>
+		</lb:loop_postings>
+		<hr />
+		
+		<lb:if_list>
+		<p class="center">
+			<strong><lb:link_prev><< previous page</lb:link_prev> :: 
+			<lb:link_next>next page >></lb:link_next>
+			</strong>
+		</p>
+		</lb:if_list>
+	</div>
+	
+	<div id="sidebar">
+		<ul>
+			<li>
+				<h2>About <lb:sitename /></h2>
+				<p><lb:sitedescription /></p>
+			</li>
+			<li>
+				<h2>Archive</h2>
+				
+				<lb:archive />
+
+			</li>
+			<li>
+				<h2>Calendar</h2>
+				<lb:calendar />
+			</li>	
+				<h2>Subscribe to this</h2>
+				<ul>
+					<li>
+						<lb:link_podcast><img src="images/rss.gif" alt="RSS" /></lb:link_podcast>
+						<lb:link_podcast>Podcast</lb:link_podcast>
+					</li>
+					<li>
+						<lb:link_podcast comments="true"><img src="images/rss.gif" alt="RSS" /></lb:link_podcast>
+						<lb:link_podcast comments="true">Podcast + Comments</lb:link_podcast>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<h2>Categories</h2>
+				<ul>
+            		<lb:loop_categories>
+            		<li>
+            			<lb:link_catfeed><img src="images/rss.gif" alt="RSS" /></lb:link_catfeed>
+            			<lb:link_category><lb:categoryname /></lb:link_category>
+            		</li>
+            		</lb:loop_categories>
+            	</ul>
+            </li>
+				<li>
+				<h2>Tags</h2>
+				<lb:tagcloud />
+				</li>
+				
+            <li>
+            	<h2>Last 10 Postings</h2>
+            	<ul>
+            		<lb:loop_postings number="10" forceloop="true" paging="false">
+            		<li><lb:link_permalink><lb:title /></lb:link_permalink></li>
+            		</lb:loop_postings>
+            	</ul>
+            </li>
+			<li>
+				<h2>Last 10 Comments</h2>
+				<ul>
+					<lb:loop_comments number="10" global="true">
+					<li>
+						<lb:link_permacomment><lb:commentname /> 
+						(<lb:commentparent />)</lb:link_permacomment>
+					</li>
+					</lb:loop_comments>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	
+	<hr />
+
+
+	
+	<div id="footer">
+	
+		<p>
+			Powered by <a href="http://loudblog.de" title="Loudblog Website">Loudblog</a> | 
+			Template by <a href="http://binarybonsai.com/kubrick/">Michael Heilemann</a>
+		</p>
+	</div>
+</div>
+
+
+</body>
+</html>

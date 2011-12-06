@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+ 
+  <head profile="http://gmpg.org/xfn/11"> 
+
+<lb:if_list>
+    <title>Welcome to CGNet Swara</title>
+</lb:if_list>
+<lb:if_single>
+    <title><lb:title /> - CGNet Swara</title>
+</lb:if_single>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+    <meta http-equiv="imagetoolbar" content="no" /> 
+    <meta name="description" content="<lb:sitedescription />" />
+    <meta name="author" content="Rahul Gonsalves, Pixelogue" /> 
+    <meta name="copyright" content="<lb:sitename />" /> 
+    <meta name="company" content="<lb:sitename />" /> 
+    <meta name="revisit-after" content="3 days" /> 
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" /> 
+    <meta http-equiv="content-language" content="en-GB" />
+    <meta property="og:title" content="<lb:title />">
+    <link rel="stylesheet" type="text/css" href="c/master.css" />
+ 
+    <lb:rssfeedhead />
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17543752-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'8c4880ac-9f17-48bb-83eb-e948d49c684b'});</script>
+  </head>
+ 
+<lb:if_list>  <body id="body-index"></lb:if_list>
+<lb:if_single>  <body id="body-inside"></lb:if_single>
+
+    <div id="wrapper">
+
+<br>
+
+      <div id="content" class="clearfix">
+
+        <div id="nav" class="clearfix">
+        
+          <h1><a href="http://cgnetswara.org/"><img id="logo" 
+src="swaracover-small.png"
+width=220
+alt="CGNet Swara Logo" /></a></h1>
+        
+<h2 class="header">
+<table><tr>
+<td>
+          <a href="http://cgnetswara.org/about.html">About</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+</td><td>
+          <a href="http://cgnetswara.org/news.html">News & Events</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+</td><td>
+          <a href="http://cgnetswara.org/impact.html">Impact</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+</td><td>
+          <a href="http://cgnetswara.org/recognition.html">Recognition</a>
+</td></td>
+</table>
+</h2>
+
+          <h2 class="slogan">CGnet Swara is a platform to discuss issues related to Central Gondwana region in India. To record a message, call us on <strong>+91-80-4113 7280</strong>.<lb:siteslogan /></h2>
+          
+        </div><!-- nav -->
+
+        <div id="primary">
+
+	  <!-- google search results -->
+	  <div id="cse" style="width:100%;"></div> 
+
+        <lb:if_list>
+          <h2>Recent Reports &raquo;</h2>
+        </lb:if_list>
+        
+        <lb:loop_postings number="5" order="desc">
+
+        <div class="report">
+
+          <h3><lb:link_permalink><lb:title /></lb:link_permalink></h3>
+
+          <lb:if_audio>
+          
+        	<div class="audiobox">
+        		<lb:flashplayer width="225" height="70" />
+        	</div>
+
+<!--
+          <div class="audiobox">
+            
+            <audio preload="none" controls>
+              <source src="<lb:plainaudio></lb:plainaudio>" />
+              <lb:flashplayer width="200" height="40" />
+            </audio>
+            
+          </div>
+-->
+          
+          </lb:if_audio>
+          <lb:message />
+
+          <h4>Posted on: <strong><lb:posted format="M d, Y" /></strong>, by 
+<strong><lb:loop_postingtags><lb:postingtag link="true" /> 
+			</lb:loop_postingtags></strong></h4>
+
+        </div><!-- #report -->
+        
+        </lb:loop_postings>
+        
+        <p class="pagination"><lb:link_prev>&laquo; View Newer Reports</lb:link_prev></p>
+        <p class="pagination"><lb:link_next>View Older Reports &raquo;</lb:link_next></p>
+
+        </div><!-- #primary -->
+
+        <div id="secondary">
+
+<!--
+          <h2>Browse by Language &raquo;</h2>
+          
+          <ul>
+          <lb:loop_categories>
+            <li><lb:link_catfeed></lb:link_catfeed> <lb:link_category><lb:categoryname /></lb:link_category></li>
+          </lb:loop_categories>
+          </ul>
+
+          <div class="tagCloud">
+          
+            <h2>Browse By Author &raquo;</h2>
+            
+            <lb:tagcloud />
+
+          </div><!-- #tagCloud -->
+<!--
+-->
+
+<img src="http://cgnetswara.org/loudblog/custom/templates/default/i/training-camp-smaller.jpg" width=220>
+<center>
+<font size=-1><i>Recording a report on CGNet Swara</i></font>
+</center>
+
+          <h3>Search Reports &raquo;</h3>
+
+<div id="cse-search-form" style="width: 100%;">Loading</div>
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript"> 
+  google.load('search', '1', {language : 'en'});
+  google.setOnLoadCallback(function() {
+    var customSearchControl = new google.search.CustomSearchControl('005349027740482927274:igk87wluiru');
+    customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+    var options = new google.search.DrawOptions();
+    options.setSearchFormRoot('cse-search-form');    
+    customSearchControl.draw('cse', options);
+  }, true);
+</script>
+<link rel="stylesheet" href="http://cgnetswara.org/loudblog/custom/templates/default/c/search.css" type="text/css" />
+
+          <h2>Browse By Month &raquo;</h2>
+          
+<ul id="archive"> 
+    <li><a href="http://cgnetswara.org/?date=2011-08">August 2011</a></li> 
+    <li><a href="http://cgnetswara.org/?date=2011-07">July 2011</a></li> 
+    <li><a href="http://cgnetswara.org/?date=2011-06">June 2011</a></li> 
+    <li><a href="http://cgnetswara.org/?date=2011-05">May 2011</a></li> 
+    <li><a href="http://cgnetswara.org/?date=2011-04">April 2011</a></li> 
+    <li><a href="http://cgnetswara.org/?date=2011-03">March 2011</a></li> 
+    <li><a href="http://cgnetswara.org/?date=2011-02">February 2011</a></li> 
+    <li><a href="http://cgnetswara.org/?date=2011-01">January 2011</a></li> 
+    <li><a href="http://cgnetswara.org/?date=2010-12">December 2010</a></li> 
+    <li><a href="http://cgnetswara.org/?date=2010-11">November 2010</a></li> 
+    <li><a href="http://cgnetswara.org/?date=2010-10">October 2010</a></li> 
+    <li><a href="http://cgnetswara.org/?date=2010-09">September 2010</a></li> 
+    <li><a href="http://cgnetswara.org/?date=2010-08">August 2010</a></li> 
+    <li><a href="http://cgnetswara.org/?date=2010-07">July 2010</a></li> 
+    <li><a href="http://cgnetswara.org/?date=2010-06">June 2010</a></li> 
+    <li><a href="http://cgnetswara.org/?date=2010-05">May 2010</a></li> 
+    <li><a href="http://cgnetswara.org/?date=2010-04">April 2010</a></li> 
+    <li><a href="http://cgnetswara.org/?date=2010-03">March 2010</a></li> 
+    <li><a href="http://cgnetswara.org/?date=2010-02">February 2010</a></li> 
+</ul> 
+          
+          <h2>Supported By &raquo;</h2>
+
+<a href="http://www.icfj.org/"><img src="http://cgnetswara.org/loudblog/custom/templates/default/i/icfj-logo-bg.png" width=220></a>
+
+        </div><!-- #secondary -->
+
+<div class="comments">
+
+        	<lb:area_comments>
+    
+ 			<h2 id="commentheadline">&nbsp;</h2>
+ 			<h2>Comments</h2><br>
+        	<ol id="commentlist">
+        		<lb:loop_comments>
+            	<li>
+            		<b><lb:commentname /> says on <lb:commentposted format="M j, Y @ h:i A" />:</b>
+
+<h4>            
+            		<lb:if_commentaudio>
+            		<div>
+            			<lb:commentflashplayer height="21" width="150" />
+            			<p><lb:link_commentfile>Download comment</lb:link_commentfile><br />(<lb:commentsize /> MB | <lb:commentlength /> min)</p>
+            		</div>
+            		</lb:if_commentaudio>
+            		<p><lb:commentmessage />
+</h4>
+            	</li>
+       		  </lb:loop_comments>
+        	</ol>
+        
+        	<lb:area_makecomment>
+            <h2>Post a Comment</h2> 
+
+        <div class="report">
+	    <p><i>To record your comment, please call
+	    and leave a message at +91-80-4113 7280.  Recording your
+	    comment in audio format will ensure that it is accessible
+	    to all CGNet Swara users, most of whom lack Internet
+	    access and access the reports via phone.</i></p>
+
+	    <p><i>If you are located outside of India and unable to place
+	    a phone call to the number above, then you may leave a
+	    comment in text format using the following form.  Your
+	    comment will be available on the website, but not via
+	    phone.</i>
+	    </p>
+	      </div>
+            <div class="input">
+                <label for="commentname"><br>Name</label>
+                <lb:inputname />
+                <label for="commentmail"><br>Email</label>
+                <lb:inputmail />
+                <label for="commentweb"><br>URL</label>
+                <lb:inputweb />
+            </div>
+            
+            <div id="message" class="input">
+                <label for="commentmessage">Message</label>
+                <lb:inputmessage />
+            </div>
+            
+            <lb:if_preventspam>
+            <div id="spamquestion" class="input">
+                <label for="commentmail"><lb:spamquestion /></label>
+                <lb:inputspam />
+            </div>
+            </lb:if_preventspam>
+
+            <div id="buttons" class="input">
+                <lb:buttonpreview />
+                <lb:buttonsend />
+            </div>
+        	</lb:area_makecomment>    
+   		  </lb:area_comments>
+
+    	</div>
+    
+		</lb:loop_postings>
+
+</div><!-- #comments -->
+
+      </div><!-- #content -->
+
+<br>                
+	</div><!-- #wrapper --> 
+ 
+  </body> 
+ 
+</html>
