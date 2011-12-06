@@ -5,6 +5,7 @@ from database import *
 from utilities import *
 import datetime, xmlrpclib
 import ConfigParser
+import ftplib
 config=ConfigParser.ConfigParser()
 
 db = Database()	 
@@ -16,7 +17,7 @@ def getLastPushedPostID():
 def wp_post(post):
     wp_url = "http://localhost/wp/xmlrpc.php"
     wp_username = "admin"
-    wp_password = "<pass>"  
+    wp_password = "kissmyass3ce"  
     wp_blogid = ""
     status_draft = 0
     status_published = 1
@@ -32,6 +33,15 @@ def wp_post(post):
     post_id = server.metaWeblog.newPost(wp_blogid, wp_username, wp_password, data, status_published)
     return post_id
 
+def uploadfile(post):
+	os.chdir("/opt/swara/sounds/web")
+	file=str(post) +".mp3"	
+	print file
+	ftp = ftplib.FTP("ruaitv.co.id")
+	print ftp.login("swarauser@ruaitv.co.id", "swara123")
+	print ftp.storbinary("STOR "+file, open(file, "rb"))
+	os.chdir("/opt/swara/tools")
+
 if __name__=="__main__":
 	#Create Database object
 	postid=getLastPushedPostID() 
@@ -40,7 +50,9 @@ if __name__=="__main__":
 		print "No unpushed posts"
 		exit()
 	for post in posts:
+		uploadfile(post)
 		try:
+			uploadfile(post)
 			post_id=wp_post(post)
                         debugPrint("Posted Wordpress Post ID: " + str(post_id))
 		except:
