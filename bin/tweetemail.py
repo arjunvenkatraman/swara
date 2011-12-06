@@ -18,8 +18,8 @@ from email import Encoders
 
 config=ConfigParser.ConfigParser()
 config.read("/home/swara/audiowiki/twittercredsswara.conf")
-gmail_user = "cgnetautomailer@@gmail.com"
-gmail_pwd = "sabkomailo"
+gmail_user = "<myuser@gmail.com>"
+gmail_pwd = "<mypassword>"
 
 OAUTH_TOKEN = config.get("Authentication","oauth_token")
 OAUTH_TOKEN_SECRET = config.get("Authentication","oauth_token_secret")
