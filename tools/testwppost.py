@@ -37,8 +37,8 @@ def uploadfile(post):
 	os.chdir("/opt/swara/sounds/web")
 	file=str(post) +".mp3"	
 	print file
-	ftp = ftplib.FTP("ruaitv.co.id")
-	print ftp.login("swarauser@ruaitv.co.id", "swara123")
+	ftp = ftplib.FTP("somedomain")
+	print ftp.login("swarauser@somedomain", "swara123")
 	print ftp.storbinary("STOR "+file, open(file, "rb"))
 	os.chdir("/opt/swara/tools")
 
