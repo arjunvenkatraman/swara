@@ -1,0 +1,46 @@
+.ac_input {
+	width: 500px;
+}
+.ac_results {
+	width: 200px;
+	background: #97b8be;
+	cursor: pointer;
+	position: absolute;
+	left: 0;
+	font-size: 90%;
+	z-index: 101;
+	text-align:left;
+}
+.ac_results ul {
+	width: 200px;
+	list-style-position: outside;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	border: 1px solid #3d6171;
+}
+.ac_results iframe
+{
+	display:none;/*sorry for IE5*/
+	display/**/:block;/*sorry for IE5*/
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:-1;
+	filter:mask();
+	width:3000px;
+	height:3000px;
+}
+.ac_results li {
+	width: 190px;
+	padding: 2px 5px;
+}
+.ac_results a {
+	width: 100%;
+}
+.ac_loading {
+	background : url('wait.gif') right center no-repeat;
+}
+.over {
+	background: #dd0067;
+}

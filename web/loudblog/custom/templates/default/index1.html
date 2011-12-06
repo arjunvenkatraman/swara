@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+    <title><lb:sitename /> </title>
+    <link rel="Shortcut Icon" href="swaraicon.png" type="image/x-icon" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" media="screen" href="screen.css" type="text/css" />
+    <lb:rssfeedhead />
+    <meta http-equiv="content-language" content="en" />
+    <meta name="cgneet awara" content="cgnet swara" />
+	<meta name="description" content="<lb:sitedescription />" />
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17543752-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'8c4880ac-9f17-48bb-83eb-e948d49c684b'});</script>
+</head>
+
+
+
+<body>
+<div id="wrapper">
+	<div id="header">
+    	<h1><a href="http://cgnetswara.org"><img src="swaracover.png" width="212" height="81" alt="CGNet Swara" /> </a>
+
+    	</h1>
+   	  <p><lb:siteslogan /></p>
+	</div>
+
+
+	<div id="headbox">
+    	<div class="container">
+        	<h2>Welcome</h2>
+        	<p><lb:sitedescription /></p>
+       	  <p>
+       	    <lb:link_podcast><img src="feedicon.gif" alt="Feed icon" /> Swara posts feed</lb:link_podcast> 
+        	<br />
+        	<lb:link_podcast comments="true"></lb:link_podcast></p>
+    	</div>
+    
+    	<div class="container">
+        	<h2>Browse by Month</h2>
+        	<ul>
+        		<lb:archive /> 
+            	
+        		
+        	</ul>
+    	</div>
+
+		<div class="container">		
+				<h2>Language</h2>
+				<ul>
+					<lb:loop_categories>
+					<li><lb:link_catfeed><img src="feedicon.gif" alt="RSS" /></lb:link_catfeed> <lb:link_category><lb:categoryname /></lb:link_category></li>
+					</lb:loop_categories>
+				</ul>
+		
+				<h2>callers</h2>
+				<lb:tagcloud />
+		</div>
+		
+    
+    	<div id="boxbottom"></div>
+	</div>
+
+
+	<div id="content">
+    	<lb:loop_postings number="5" order="desc">
+
+    	<div class="posting">
+        	<h2><lb:link_permalink><lb:title /></lb:link_permalink></h2>
+        
+        	<div class="box">
+        		<lb:message />
+        	</div>
+        	<lb:if_audio>
+        	<div class="audiobox">
+        		<lb:flashplayer width="200" height="70" />
+        		
+        	</div>
+   	    </lb:if_audio>
+                
+       	  <p class="author">
+            	<lb:link_permalink>Posted on: </lb:link_permalink> 
+            	<lb:posted /> <br>
+            	Language: <lb:loop_postingcats><lb:postingcat link="true" /> 
+            	</lb:loop_postingcats>
+			<br>
+            	Caller: <lb:loop_postingtags><lb:postingtag link="true" /> 
+			</lb:loop_postingtags><br>
+       	  </p>
+       	  <div class="box">
+          Related posts:
+       	    <dl>
+       	      <lb:loop_hyperlinks>
+       	        <dt>
+       	          <lb:link_hyperlink>
+       	            <lb:hyperlinkname />
+   	              </lb:link_hyperlink>
+   	            </dt>
+       	        <dd>
+       	          <lb:hyperlinkdescription />
+   	            </dd>
+   	          </lb:loop_hyperlinks>
+   	        </dl>
+   	      </div>    
+          <br /> 		
+        	<lb:area_comments>
+    
+ 			<h2 id="commentheadline">&nbsp;</h2>
+ 			<h2>Comments</h2>
+        	<ol id="commentlist">
+        		<lb:loop_comments>
+            	<li>
+            		<h4><lb:commentname /> says on <lb:commentposted format="M j, Y @ h:i A" />:</h4>
+            
+            		<lb:if_commentaudio>
+            		<div>
+            			<lb:commentflashplayer height="21" width="150" />
+            			<p><lb:link_commentfile>Download comment</lb:link_commentfile><br />(<lb:commentsize /> MB | <lb:commentlength /> min)</p>
+            		</div>
+            		</lb:if_commentaudio>
+            		<lb:commentmessage />
+            	</li>
+       		  </lb:loop_comments>
+        	</ol>
+        
+        	<lb:area_makecomment>
+            <h2>Your Comment</h2>
+            <div class="input">
+                <label for="commentname">Name</label>
+                <lb:inputname />
+            </div>
+            <div class="input">
+                <label for="commentmail">eMail</label>
+                <lb:inputmail />
+            </div>
+            <div class="input">
+                <label for="commentweb">URL</label>
+                <lb:inputweb />
+            </div>
+            
+            <div id="message" class="input">
+                <label for="commentmessage">Message</label>
+                <lb:inputmessage />
+            </div>
+            
+            <div id="file" class="input">
+                <label for="commentfile">Audio Comment (&lt;<lb:commentlimit /> MB)</label>
+                <lb:inputfile />
+            </div>
+            
+            <lb:if_preventspam>
+            <div id="spamquestion" class="input">
+                <label for="commentmail"><lb:spamquestion /></label>
+                <lb:inputspam />
+            </div>
+            </lb:if_preventspam>
+
+            <div id="buttons" class="input">
+                <lb:buttonpreview />
+                <lb:buttonsend />
+            </div>
+        	</lb:area_makecomment>    
+   		  </lb:area_comments>
+
+    	</div>
+    
+		</lb:loop_postings>
+    
+    	<div id="prevnext">
+        	<p>
+        		<lb:link_prev>&nbsp;<< Previous Page&nbsp;</lb:link_prev>
+        		&nbsp;&nbsp;&nbsp; 
+        		<lb:link_next>&nbsp;Next Page >>&nbsp;</lb:link_next>
+        	</p>
+    	</div>
+    
+    	<div id="footer">
+    		<p><a href="http://cgnetswara.org">Copyright CGNet Swara</a></p>
+    	</div>
+    
+	</div>
+
+</div>
+
+</body>
+
+</html>

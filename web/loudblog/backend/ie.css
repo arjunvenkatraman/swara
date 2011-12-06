@@ -1,0 +1,66 @@
+
+
+body#record1 div.method div.data {
+width: 380px;
+float: left;
+padding: 20px 0 20px 0;
+} 
+
+
+
+body#record1 .method input { font-size: 0.9em; width: 90px; margin-top: 20px; }
+
+body#record1 .method .data input,
+#choosefile { width: auto; margin: 0;} 
+
+body#record1 .method .data .datainput { width: 360px; margin: 0; } 
+
+#navi li:hover {
+float: left;
+margin-right: 6px;
+background: url(navtableft.png) left bottom no-repeat;
+}
+
+body#record1 li#tab_record:hover,
+body#record2 li#tab_record:hover,
+body#postings li#tab_postings:hover,
+body#comments li#tab_comments:hover,
+body#organisation li#tab_organisation:hover,
+body#settings li#tab_settings:hover {
+background: #dd0067 url(navtableft.png) left bottom no-repeat;
+}
+
+#navi a:focus, #navi a:hover, #navi a:active {
+color: white;
+text-decoration: none;
+background: url(navtabright.png) right bottom no-repeat;
+}
+
+body#record2 #date input {
+width: 2.5em;
+margin: 0 4px 0 0;
+}
+
+.fileinfo input {
+width: 70px;
+}
+
+body#record2 input#change {
+width: 80px;
+}
+
+body#record2 input.radio,
+body#settings input.radio {
+width: auto;
+}
+
+
+body#settings input,
+body#settings textarea,
+body#settings select
+{ width: 280px; }
+
+
+code, p.filename a {
+font: normal 11px/13px "Courier New", fixed;
+}
