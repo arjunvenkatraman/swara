@@ -60,7 +60,7 @@ class Database:
         self.c.execute("SELECT title  FROM lb_postings WHERE station = %s and id=%s;",(str(channelNum),str(post),))
         title = self.c.fetchall()
         title = [i[0] for i in title]
-        return title
+        return title[0]
     
     def getMessageforPost(self, channelNum, post):
         self.c.execute("SELECT message_input  FROM lb_postings WHERE station = %s and id=%s;",(str(channelNum),str(post),))
@@ -220,6 +220,14 @@ class Database:
         if title[0]==None:
             title="NULL"
         return title
+    def getContentforPost(self, channelNum, post):
+        self.c.execute("SELECT message_html  FROM lb_postings WHERE station = %s and id=%s;",(str(channelNum),str(post),))
+        message = self.c.fetchall()
+        print message
+	message = [i[0] for i in message]
+        if message[0]==None:
+            message="NULL"
+        return message[0]
 			
     def getUnSMSedPostsInChannel(self, channelNum, lastid):
         self.c.execute("SELECT * FROM lb_postings WHERE station = %s and id > %s and status = 3 ORDER BY posted;",(str(channelNum),str(lastid),))
