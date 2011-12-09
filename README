@@ -4,7 +4,7 @@
 
 #1. Install pre-requisites
 ##################################################
-# yum install lame asterisk yum install -y mysql mysql-server wget gcc gcc-c++ bison libtermcap-devel newt newt-devel ncurses ncurses-devel svn zlib zlib-devel openssl openssl-devel kernel-devel httpd php-mysql php MySQL-python
+# yum install lame asterisk mysql mysql-server wget gcc gcc-c++ bison libtermcap-devel newt newt-devel ncurses ncurses-devel svn zlib zlib-devel openssl openssl-devel kernel-devel httpd php-mysql php MySQL-python
 # yum install python-setuptools
 # [ADDITIONAL DEPENDENCIES]
 # Python Setuptools
