@@ -50,7 +50,7 @@ language=config.get("System","language")
 SOUND_DIR = config.get("System","sounddir")
 SOUND_DIR = SOUND_DIR + "/"
 #PROMPTS_DIR = SOUND_DIR + 'prompts/hindi/'
-AST_SOUND_DIR = '/var/lib/asterisk/sounds/'
+AST_SOUND_DIR = SOUND_DIR
 PROMPTS_DIR = SOUND_DIR + '/prompts/' + (language, 'english')[language == None] + '/' 
 
 sys.setrecursionlimit(15000)
